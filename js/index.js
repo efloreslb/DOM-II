@@ -88,35 +88,39 @@ document.addEventListener("scroll", (event) => {
     body.style.backgroundColor = color[Math.floor(Math.random() * color.length)];
 })
 
-// 7 load - WORKS
+// 7 keydown - WORKS
+
+let newH1 = ['Keydown Bus', 'Flying Bus', 'Fast Bus', 'Slow Bus', 'Water Bus', 'Space Bus', 'Kitty Bus', 'Meow Bus']
+
+let h1 = document.querySelector('.logo-heading');
+document.addEventListener('keydown', (event) => {
+    h1.textContent = newH1[Math.floor(Math.random() * newH1.length)];
+})
+
+// 8 drag / dragend - WORKS
+
+h1.addEventListener('drag', (event) => {
+    h1.textContent = "You're dragging me!"
+    h1.style.color = "goldenrod";
+})
+
+h1.addEventListener('dragend', (event) => {
+    h1.style.color = "green";
+    h1.textContent = "Rough landing!"
+})
+
+// 9 select
+
+let p = document.querySelectorAll('p');
+p.forEach((para) => {
+    para.addEventListener('select', (event) => {
+        event.target.style.fontSize = '50px';
+    })
+})
+
+// 10 load - WORKS
 
 window.addEventListener("load", (event) => {
     alert("Welcome to the Fun Bus!");
 })
-
-// 8 keydown
-
-let h3 = document.querySelectorAll('h3');
-    h3.forEach((heading) => {
-        heading.addEventListener('keydown', e => {
-        heading.textContent = "keydown";
-    })
-})
-
-
-// 9 drag / drop
-
-let h1 = querySelector('h1');
-h1.addEventListener('drag', (event) => {
-    h1.style.color = "pink";
-})
-
-// 10 select
-
-let p = querySelectorAll('p');
-p[0].addEventListener('select', (event) => {
-    p[0].style.textContent = `Ooh new paragraph!`;
-})
-
-
 
