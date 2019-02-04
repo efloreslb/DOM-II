@@ -19,8 +19,6 @@ h4.forEach((title) => {
 
 //Event Listeners
 
-
-
 // 1 mouseover - WORKS
 let navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach((link) => {
@@ -105,17 +103,14 @@ h1.addEventListener('drag', (event) => {
 })
 
 h1.addEventListener('dragend', (event) => {
-    h1.style.color = "green";
+    h1.style.color = "peachpuff";
     h1.textContent = "Rough landing!"
 })
 
-// 9 select
+// 9 contextmenu - WORKS
 
-let p = document.querySelectorAll('p');
-p.forEach((para) => {
-    para.addEventListener('select', (event) => {
-        event.target.style.fontSize = '50px';
-    })
+document.addEventListener('contextmenu', (event) => {
+    alert(`You've discovered the secret menu!`);
 })
 
 // 10 load - WORKS
