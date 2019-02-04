@@ -29,6 +29,12 @@ navLinks.forEach((link) => {
     })
 })
 
+navLinks.forEach((link) => {
+    link.addEventListener('click', event => {
+        event.preventDefault();                 //preventDefault()
+    })
+})
+
 let img = document.querySelectorAll('img');
 img[0].addEventListener('mouseover', event => {
     img[0].setAttribute('src', 'img/fly-bus.png');
